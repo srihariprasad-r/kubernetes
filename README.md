@@ -2,6 +2,8 @@
 
 kubectl create -f pod-definition.yml
 
+#pods gets created in default namespace, use --namespace=<> instead
+
 kubectl get pods
 
 kubectl describe pods mypod1
