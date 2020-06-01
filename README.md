@@ -38,3 +38,18 @@ kubectl get rs
 kubectl describe rs myapp-rs
 
 kubectl delete rs myapp-rs
+
+#Below commands are for deployments from yaml file
+kubectl create -f deployment-definition.yml
+
+kubectl get deployment
+
+#deployment creates replicasets
+kubectl get replicaset
+
+kubectl get pods
+
+
+#Below commands list all items created
+kubectl get all
+
