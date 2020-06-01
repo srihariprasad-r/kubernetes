@@ -44,7 +44,6 @@ kubectl create -f deployment-definition.yml
 
 kubectl get deployment
 
-#deployment creates replicasets
 kubectl get replicaset
 
 kubectl get pods
@@ -52,4 +51,11 @@ kubectl get pods
 
 #Below commands list all items created
 kubectl get all
+
+#namespace creation
+kubectl create -f namespace-dev.yml
+
+kubectl create namespace dev
+
+
 
