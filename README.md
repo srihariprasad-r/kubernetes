@@ -46,7 +46,7 @@ kubectl delete rs myapp-rs
 
 kubectl create -f deployment-definition.yml
 
-kubectl get deployment
+kubectl get deployments
 
 kubectl get replicaset
 
@@ -62,5 +62,12 @@ kubectl create -f namespace-dev.yml
 
 kubectl create namespace dev
 
+#below will default namespace to actual value to avoid reptition
+
+kubectl config set-context $(kubectl config current-context) --namespace=dev
+
+#list pods across all namespaces
+
+kubectl get pods --all-namespaces
 
 
