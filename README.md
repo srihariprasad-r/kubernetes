@@ -70,4 +70,16 @@ kubectl config set-context $(kubectl config current-context) --namespace=dev
 
 kubectl get pods --all-namespaces
 
+#docker commands
+
+#below commands overrides CMD command and sleeps for defaulted setting.
+#ENTRYPOINT ["sleep"]  & CMD ["5"]
+
+docker run --name ubuntu-sleeper ubuntu-sleeper
+
+#below commands overrides entrypoint command and sleeps fpor 10 seconds
+
+docker run  --name ubuntu-sleeper --entrypoint sleeper2.0  ubuntu-sleeper 10
+
+#In kubernetes, command is setting for ENTRYPOINT & args is setting for CMD
 
