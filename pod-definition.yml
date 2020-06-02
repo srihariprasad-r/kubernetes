@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mypod1
+  name: myapp-pod
   labels:
     app: myapp
 spec:
@@ -10,3 +10,6 @@ spec:
       image: nginx
       command: ["sleep"]
       args: ["5"]
+      envFrom:
+        - configMapRef:
+            name: app-config

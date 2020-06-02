@@ -94,7 +94,6 @@ kubectl describe configmaps
 #configmaps in imperative way
 
 kubectl create configmap app-config --from-literal=APP_COLOR=blue \
-                                    --from0literal=APP_MODE=dev
-
+                                    --from-literal=APP_MODE=dev
 
 kubectl create configmap app-config --from-file=<path-to-file>
