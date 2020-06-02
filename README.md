@@ -97,3 +97,9 @@ kubectl create configmap app-config --from-literal=APP_COLOR=blue \
                                     --from-literal=APP_MODE=dev
 
 kubectl create configmap app-config --from-file=<path-to-file>
+
+#secrets in imperative way
+
+kubectl create secret generic app-secret --from-literal=DB_HOST=mysql
+
+kubectl create secret generic app-secret --from-file=<path-to-file>
