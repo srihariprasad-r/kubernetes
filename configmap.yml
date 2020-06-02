@@ -3,5 +3,7 @@ kind: ConfigMap
 metadata:
   name: app-config
 data:
-  APP_COLOR: blue
-  APP_MODE: dev
+  property1: width
+  property2: length
+  cnfg.properties: |
+    props: radius
