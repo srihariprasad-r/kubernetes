@@ -83,10 +83,18 @@ docker run  --name ubuntu-sleeper --entrypoint sleeper2.0  ubuntu-sleeper 10
 
 #In kubernetes, command is setting for ENTRYPOINT & args is setting for CMD
 
-#configmaps in declarative command
+#configmaps in declarative way
 
 kubectl create -f configmap.yml
 
 kubectl get configmaps
 
 kubectl describe configmaps
+
+#configmaps in imperative way
+
+kubectl create configmap app-config --from-literal=APP_COLOR=blue \
+                                    --from0literal=APP_MODE=dev
+
+
+kubectl create configmap app-config --from-file=<path-to-file>
