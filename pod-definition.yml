@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: myapp-pod
+  name: myapp-pod-secret
   labels:
     app: myapp
 spec:
@@ -13,3 +13,6 @@ spec:
       envFrom:
         - configMapRef:
             name: app-config
+        - secretRef:
+            name: app-secret
+        
