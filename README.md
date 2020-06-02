@@ -62,7 +62,7 @@ kubectl create -f namespace-dev.yml
 
 kubectl create namespace dev
 
-#below will default namespace to actual value to avoid reptition
+#below will default namespace to actual value to avoid repetition
 
 kubectl config set-context $(kubectl config current-context) --namespace=dev
 
@@ -83,3 +83,10 @@ docker run  --name ubuntu-sleeper --entrypoint sleeper2.0  ubuntu-sleeper 10
 
 #In kubernetes, command is setting for ENTRYPOINT & args is setting for CMD
 
+#configmaps in declarative command
+
+kubectl create -f configmap.yml
+
+kubectl get configmaps
+
+kubectl describe configmaps
