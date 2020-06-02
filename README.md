@@ -96,10 +96,27 @@ kubectl describe configmaps
 kubectl create configmap app-config --from-literal=APP_COLOR=blue \
                                     --from-literal=APP_MODE=dev
 
-kubectl create configmap app-config --from-file=<path-to-file>
+kubectl create configmap app-config --from-file=filepath
 
 #secrets in imperative way
 
 kubectl create secret generic app-secret --from-literal=DB_HOST=mysql
 
-kubectl create secret generic app-secret --from-file=<path-to-file>
+kubectl create secret generic app-secret --from-file=filepath
+
+#secrets in declarative way
+
+kubectl create -f secrets.yml
+
+kubectl get secrets
+
+#describe will not list the base64 hash
+
+kubectl describe secrets
+
+#secrets will be displayed with base64 hash
+#to encode to echo -n 'secret' | base64
+#to decode to echo -n 'secret' | base64 --decode
+
+kubectl get secrets app-secret -o yaml
+
